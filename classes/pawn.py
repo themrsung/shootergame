@@ -18,7 +18,8 @@ class Pawn(Object):
         self.is_dead = False
         self.weapon = self.pawn_data.default_weapon
     
-    def tick(self):
+    def tick(self, level):
+        super().tick(level)
         if self.heatlh <= self.death_health:
             self.die()
     

@@ -1,15 +1,13 @@
 class Level:
-    def __init__(self, pawns, weapons, projectiles):
-        self.pawns = pawns
-        self.weapons = weapons
-        self.projectiles = projectiles
+    def __init__(self, objects):
+        self.objects = objects
     
     def tick(self):
         for pawn in self.pawns:
-            pawn.tick()
+            pawn.tick(self)
 
         for weapon in self.weapons:
-            weapon.tick()
+            weapon.tick(self)
         
         for projectile in self.projectiles:
-            projectile.tick()
+            projectile.tick(self)

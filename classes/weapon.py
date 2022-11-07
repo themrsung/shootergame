@@ -32,8 +32,8 @@ class Weapon(Object):
         self.projectile_data = projectile_data
         self.ammo = self.weapon_data.initial_ammo
 
-    def tick(self):
-        pass
+    def tick(self, level):
+        super().tick(level)
 
     def fire(self, heading):
         if self.ammo > self.weapon_data.min_ammo:
@@ -50,6 +50,6 @@ class Projectile(Object):
         self.heading = 0
         self.is_moving = False
     
-    def tick(self):
-        pass
+    def tick(self, level):
+        super().tick(level)
 
